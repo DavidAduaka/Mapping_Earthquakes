@@ -52,9 +52,9 @@ L.geoJson(data, {
   weight: 2,
 }).addTo(tectonicplates);
 
-tectonicPlates.addTo(map)
+tectonicplates.addTo(map)
 
-};
+});
 
 // Retrieve the earthquake GeoJSON data.
 d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson").then(function(data) {
@@ -152,4 +152,4 @@ legend.onAdd = function() {
   };
 
   // Finally, we our legend to the map.
-  legend.addTo(map)};
+  legend.addTo(map)});
