@@ -68,10 +68,8 @@ let legend = L.control({
   position: "bottomright"
 });
 
-legend.onAdd = function () {
-
     // Then add all the details for the legend.
-    legend.onAdd = function() {
+  legend.onAdd = function() {
       let div = L.DomUtil.create("div", "info legend");
       const magnitudes = [0, 1, 2, 3, 4, 5];
       const colors = [
@@ -82,19 +80,18 @@ legend.onAdd = function () {
         "#ea822c",
         "#ea2c2c"
       ];
-    };
 
-    // Looping through our intervals to generate a label with a colored square for each interval.
-      for (var i = 0; i < magnitudes.length; i++) {
-          console.log(colors[i]);
-          div.innerHTML +=
-           "<i style='background: " + colors[i] + "'></i> " +
-           magnitudes[i] + (magnitudes[i + 1] ? "&ndash;" + magnitudes[i + 1] + "<br>" : "+");
-        }
-      return div;
-       };
+ // Looping through our intervals to generate a label with a colored square for each interval.
+ for (var i = 0; i < magnitudes.length; i++) {
+  console.log(colors[i]);
+  div.innerHTML +=
+    "<i style='background: " + colors[i] + "'></i> " +
+    magnitudes[i] + (magnitudes[i + 1] ? "&ndash;" + magnitudes[i + 1] + "<br>" : "+");
+}
+return div;
+};
 
-      legend.addTo(map);
+legend.addTo(map);
 
 // This function returns the style data for each of the earthquakes we plot on
 // the map. We pass the magnitude of the earthquake into two separate functions
