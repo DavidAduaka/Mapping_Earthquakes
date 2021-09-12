@@ -48,7 +48,7 @@ d3.json("https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/
   console.log(data);
 // Create a GeJSON Layer 
 L.geoJson(data, {
-  color: "#000000",
+  color: "#ea2c2c",
   weight: 2,
 }).addTo(tectonicplates);
 
